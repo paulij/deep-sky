@@ -1,0 +1,35 @@
+.ui-page {
+	-webkit-backface-visibility: hidden;
+}
+
+img {
+	max-width: 100%;
+}
+
+.cssImageMap {
+	max-width: 100%;
+	position: relative;
+}
+
+.cssImageMap img {
+	display: inline-block;
+}
+
+.cssImageMap a {
+	position: absolute;
+	display: block;
+}
+
+a.messier {
+	background: rgba(255, 0, 0, 0.3);
+}
+
+a.ngc {
+	background: rgba(0, 255, 0, 0.3);
+}
+
+a.constellation {
+	background: rgba(0, 0, 255, 0.3);
+}
+
+

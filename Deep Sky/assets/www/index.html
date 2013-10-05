@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<meta name="HandheldFriendly" content="True" />
+<meta name="MobileOptimized" content="320" />
+<meta name="viewport"
+	content="width=device-width, target-densitydpi=160dpi, initial-scale=1, user-scalable=no" />
+
+<title>Deep Sky</title>
+
+
+<link rel="stylesheet" href="scripts/jquery.mobile-1.1.1.min.css" />
+<script type="text/javascript" charset="utf-8"
+	src="scripts/jquery-1.7.2.min"></script>
+<script type="text/javascript" charset="utf-8"
+	src="scripts/jquery.mobile-1.1.1.min.js"></script>
+
+<script type="text/javascript" charset="utf-8"
+	src="scripts/jquery.cssImageMaps.js"></script>
+<link rel="stylesheet" href="css/myStyle.css" />
+
+
+<script type="text/javascript" charset="utf-8">
+	var onDeviceReady = function() {
+		document.getElementById("devready").innerHTML = "OnDeviceReady fired.";
+	};
+
+	function init() {
+		document.addEventListener("deviceready", onDeviceReady, true);
+	}
+
+	$(document).bind(
+			'pagechange',
+			function(event, data) {
+				//$('img[data-width]').cssImageMaps();
+				var toPage = data.toPage;
+				$(toPage).find('img[data-width]').cssImageMaps();
+
+				$(toPage).find('a.m2c').attr('data-transition', 'slide').attr(
+						'data-direction', 'reverse');
+				$(toPage).find('a.messier').attr('data-transition', 'slide');
+				$(toPage).find('a.ngc').attr('data-transition', 'slide');
+				$(toPage).find('a.constellation[data-side="right"]').attr(
+						'data-transition', 'slide');
+				$(toPage).find('a.constellation[data-side="left"]').attr(
+						'data-transition', 'slide').attr('data-direction',
+						'reverse');
+			});
+</script>
+
+
+</head>
+<body onload="init();" id="stage" class="theme">
+
+	<div data-role="page" id="home" data-theme="a">
+
+		<div data-role="header">
+			<h1>Deep Sky</h1>
+		</div>
+
+		<div data-role="content">
+			<ul data-role="listview">
+
+				<li><a href="messierObjects.html" data-transition="slide">
+						<img src="images/tn/tn_m1-600px-Crab_Nebula.jpg"> Messier
+						Objects
+				</a></li>
+
+				<li><a href="constellations.html" data-transition="slide">
+						<img src="images/sticks/H.jpg"> Constellations
+				</a></li>
+
+
+			</ul>
+		</div>
+		<div data-role="footer" data-position="fixed" class="footer-docs"
+			id="jqmFooter">
+			<script
+				src="http://adfonic.net/js/62a37e77-77b2-4b1a-9642-333d00304172">
+				
+			</script>
+		</div>
+	</div>
+
+</body>
+</html>
